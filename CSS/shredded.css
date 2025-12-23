@@ -1,0 +1,446 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #070707;
+  color: #ffffff;
+}
+
+/* SPLIT HERO */
+.sh-hero {
+  min-height: 90vh;
+  display: flex;
+}
+
+.sh-left {
+  width: 45%;
+  padding: 120px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sh-left h2 {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.sh-left p {
+  font-size: 1.05rem;
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.sh-right {
+  width: 55%;
+  background: url("../Images/shredded.jpg") center/cover no-repeat;
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* ACTION BUTTON */
+.sh-action {
+  width: fit-content;
+  padding: 14px 42px;
+  border: 2px solid #ef4444;
+  color: #ef4444;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+}
+
+.sh-action:hover {
+  background: #ef4444;
+  color: #000;
+  transform: translateX(10px);
+}
+
+.sh-action.invert {
+  border-color: #fff;
+  color: #fff;
+}
+
+.sh-action.invert:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* METRICS */
+.sh-metrics {
+  padding: 100px 10%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.metric {
+  width: 30%;
+  padding-left: 25px;
+  border-left: 2px solid #ef4444;
+  transition: transform 0.4s ease;
+}
+
+.metric:hover {
+  transform: translateY(-10px);
+}
+
+.metric span {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.metric h3 {
+  margin: 12px 0 6px;
+}
+
+/* PROCESS */
+.sh-process {
+  padding: 100px 12%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.process-step {
+  width: 30%;
+  padding: 30px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.4s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-15px);
+}
+
+.process-step h4 {
+  margin-bottom: 10px;
+  color: #ef4444;
+}
+
+/* IMAGE BREAK */
+
+
+/* FINAL CTA */
+.sh-final {
+  padding: 120px 15%;
+  text-align: center;
+}
+
+.sh-final h2 {
+  font-size: 2.6rem;
+  margin-bottom: 15px;
+}
+
+.sh-final p {
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #050505;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .sh-hero {
+    flex-direction: column;
+  }
+
+  .sh-left,
+  .sh-right {
+    width: 100%;
+  }
+
+  .sh-right {
+    height: 50vh;
+    clip-path: none;
+  }
+
+  .sh-metrics,
+  .sh-process {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .metric,
+  .process-step {
+    width: 100%;
+  }
+}
+nav a {
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #38bdf8;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+.star-header{
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center 0;
+  animation: starsMoveUp 80s linear infinite;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(15, 23, 42, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+/* Star animation background */
+.star-header {
+  position: relative;
+  background: url("../Images/stars.jpg") repeat;
+  background-size: cover;
+  animation: moveStars 60s linear infinite;
+}
+
+/* Keyframes for stars */
+@keyframes moveStars {
+  0% { background-position: 0 0; }
+  100% { background-position: -2000px 2000px; }
+}
+
+/* Logo */
+header h1 {
+  font-size: 1.8rem;
+  color: #38bdf8;
+  transition: text-shadow 0.3s, color 0.3s;
+  animation: fadeInDown 1s ease forwards;
+}
+
+header h1:hover {
+  color: #0ea5e9;
+  text-shadow: 0 0 10px rgba(56,189,248,.8);
+}
+
+/* Tagline */
+.tagline {
+  display: block;
+  font-size: 12px;
+  color: #cbd5f5;
+  opacity: 0.85;
+  text-align: center;
+  font-weight: 500;
+  margin-top: -4px;
+  animation: fadeInDown 1.2s ease forwards;
+}
+
+/* Navigation */
+header nav {
+  display: flex;
+  gap: 25px;
+}
+
+header nav a {
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+header nav a:nth-child(1) { animation-delay: 0.5s; }
+header nav a:nth-child(2) { animation-delay: 0.7s; }
+header nav a:nth-child(3) { animation-delay: 0.9s; }
+
+header nav a:hover {
+  color: #38bdf8;
+  text-shadow: 0 0 6px rgba(56,189,248,0.7);
+}
+
+/* ===================== */
+/* KEYFRAMES FOR NAV / LOGO / TAGLINE */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+a{text-decoration: none; color: inherit;}
+.btn {
+  padding: 1rem 2rem;
+  font-weight: 700;
+  background: rgb(255, 255, 255);
+  color: blueviolet;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border-bottom: 2px solid blueviolet;
+  border-right: 2px solid blueviolet;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  transition-duration: 1s;
+  transition-property: border-top, border-left, border-bottom, border-right,
+    box-shadow;
+}
+a { text-decoration: none; }
+.btn:hover {
+  border-top: 2px solid blueviolet;
+  border-left: 2px solid blueviolet;
+  border-bottom: 2px solid rgb(238, 103, 238);
+  border-right: 2px solid rgb(238, 103, 238);
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px;
+}
+
+.sh-hero {background-size: cover;        /* Fills the box */
+  background-position: center;   /* Centers image */
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      rgba(3,10,25,0.75),
+      rgba(3,10,25,0.9)
+    ),
+    url("../Images/talk.jpg") center / cover no-repeat;
+  position: relative; /* REQUIRED */
+}
+
+.btn {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: 1.5px solid rgba(255,255,255,0.7);
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.85rem;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.sh-right img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 25px;
+  transition: 0.4s;
+}
+
+.sh-right img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(247, 10, 10, 0.9);
+}
+.sh-right {
+  justify-content: center;
+  margin-top: 40px;
+}
+.sh-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;          /* vertical center */
+  justify-content: space-between;
+  padding: 0 6rem;
+  gap: 4rem;
+}
+
+.sh-left {
+  flex: 1;
+  max-width: 600px;
+}
+
+.sh-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;      /* horizontal center */
+  align-items: center;          /* vertical center */
+}
+
+.sh-right img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+@media (max-width: 900px) {
+  .sh-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .sh-right img {
+    max-height: 60vh;
+  }
+
+.sh-final{
+  padding: 90px 10%;
+  text-align: center;
+  min-height: 50vh;
+  background:
+    linear-gradient(
+      rgba(3, 10, 25, 0.2),
+      rgba(3, 10, 25, 0.2)
+    ),
+    url("../Images/base.jpg") no-repeat center top/cover;
+} }
+.sh-final{
+  padding: 90px 10%;
+  text-align: center;
+  min-height: 50vh;
+  background:
+    linear-gradient(
+      rgba(3, 10, 25, 0.2),
+      rgba(3, 10, 25, 0.2)
+    ),
+    url("../Images/base.jpg") no-repeat center top/cover;
+}
+
+.process-step{
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  transform: translateY(0);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 60px rgba(211, 16, 16, 0.9);
+}
+.sh-process{background-size: cover;        /* Fills the box */
+  background-position: center;   /* Centers image */
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      rgba(3,10,25,0.75),
+      rgba(3,10,25,0.9)
+    ),
+    url("../Images/talk.jpg") center / cover no-repeat;
+  position: relative; /* REQUIRED */
+}
+ 
